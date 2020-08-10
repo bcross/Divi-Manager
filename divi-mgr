@@ -1,0 +1,6 @@
+#!/bin/bash
+
+parent_path="$(dirname ${BASH_SOURCE[0]})"
+
+source $parent_path/divi-mgr-lib/main.sh
+main $@

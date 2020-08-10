@@ -1,4 +1,4 @@
-# Divi-Manager
+# Divi Manager
 ## TL;DR
     wget -q https://github.com/bcross/Divi-Manager/archive/master.zip
     unzip master.zip

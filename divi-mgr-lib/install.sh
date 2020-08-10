@@ -107,9 +107,15 @@ EOT"
             [Nn]* ) break;;
             * ) 
                 read -sp 'Wallet password: ' walletpass
-                divi-cli encryptwallet "$walletpass" >/dev/null
-                unset walletpass
-                break
+                read -sp 'Verify wallet password: ' walletpass2
+                if [ "$walletpass" == "$walletpass2" ]; then
+                    divi-cli encryptwallet "$walletpass" >/dev/null
+                    unset walletpass
+                    unset walletpass2
+                    break
+                else
+                    echo "Passwords do not match. Try again."
+                fi
         esac
     done
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ "${BASH_SOURCE[0]}" == "${0}" ]] && echo "Run divi-mgr instead"; exit
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && echo "Run divi-mgr instead" && exit
 
 parent_path="$(dirname ${BASH_SOURCE[0]})"
 

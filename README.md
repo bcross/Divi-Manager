@@ -1,5 +1,5 @@
 # Divi Manager
-## TL;DR
+## Install
     wget -q https://github.com/bcross/Divi-Manager/archive/master.zip
     unzip master.zip
     rm mater.zip Divi-Manager-master/LICENSE Divi-Manager-master/README.md
@@ -19,5 +19,5 @@ Running `divi-mgr repair` or `divi-mgr update` *will* restart the divid service.
   * Waits for all indicators to be green for staking then prompts for wallet password.
 * divi-mgr update (requires sudo)
   * Updates divi. A path to where the binaries to be extracted to is optional.
-* divi-mgr verify (requires sudo)
+* divi-mgr verify (requires sudo) (coming soon)
   * Verifies divi is not broken. Runs `divi-mgr repair` if necessary.

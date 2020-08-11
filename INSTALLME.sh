@@ -1,4 +1,4 @@
-if [ $EUID -ne 0 ]; then
+if [ ! -z $EUID ] && [ $EUID -ne 0 ]; then
   echo "Run this script with elevated privileges."
   exit 2
 fi

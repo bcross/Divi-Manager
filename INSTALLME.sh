@@ -4,7 +4,7 @@ if [ ! -z $EUID ] && [ $EUID -ne 0 ]; then
 fi
 wget -q https://github.com/bcross/Divi-Manager/archive/master.zip
 unzip -qqo master.zip
-rm master.zip Divi-Manager-master/INSTALLME Divi-Manager-master/LICENSE Divi-Manager-master/README.md
+rm master.zip Divi-Manager-master/INSTALLME.sh Divi-Manager-master/LICENSE Divi-Manager-master/README.md
 sudo cp -rf Divi-Manager-master/* /usr/local/bin
 sudo chmod +x /usr/local/bin/divi-mgr
 rm Divi-Manager-master -r

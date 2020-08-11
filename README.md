@@ -17,5 +17,5 @@ Running `divi-mgr repair` or `divi-mgr update` *will* restart the divid service.
   * Waits for all indicators to be green for staking then prompts for wallet password.
 * divi-mgr update (requires sudo)
   * Updates divi. A path to where the binaries to be extracted to is optional.
-* divi-mgr verify (requires sudo) (coming soon)
+* divi-mgr verify (requires sudo)
   * Verifies divi is not broken. Runs `divi-mgr repair` if necessary.

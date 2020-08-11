@@ -2,9 +2,8 @@
 
 function divi-mgr-stake {
     echo "Waiting for divid to be ready..."
-    ready=0
     #While not ready
-    while [ $ready -eq 0 ]; do
+    while true; do
         #Get mnsync status and extract relevant variables
         mnsync=$(divi-cli mnsync status 2>/dev/null)
         if [ -z "$mnsync" ]; then
@@ -16,7 +15,7 @@ function divi-mgr-stake {
         reqmnattempt=$(echo $mnsync | grep -Po '"RequestedMasternodeAttempt" : \K\d+')
         #If the variables are within parameters, we are ready to stake
         if [ "$synced" == "true" ] && [ $reqmnassets -eq 999 ] && [ $reqmnattempt -eq 0 ]; then
-            ready=1
+            break
         #Otherwise, wait 5 seconds and check again
         else
             sleep 5
@@ -24,6 +23,7 @@ function divi-mgr-stake {
     done
     #Read the wallet passphrase secretly and unlock for staking
     read -sp 'Wallet password: ' walletpass
+    echo
     divi-cli walletpassphrase "$walletpass" 0 true
     #Clear the walletpass variable as soon as possible
     unset walletpass

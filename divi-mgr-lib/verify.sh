@@ -24,7 +24,7 @@ function divi-mgr-verify {
     #Get the block hash locally
     blockhash=$(divi-cli getblockhash $blockcount)
     #Get the block hash from a trusted source
-    trustedblockhash=$(wget -qO- "https://chainz.cryptoid.info/divi/api.dws?q=getblockhash&height=974646" | sed 's/"//g')
+    trustedblockhash=$(wget -qO- "https://chainz.cryptoid.info/divi/api.dws?q=getblockhash&height=$blockcount" | sed 's/"//g')
     #If the block count is greater than 100 and the block hashes match, all is well
     if [ $blockcount -gt 100 ] && [ "$blockhash" == "$trustedblockhash" ]; then
         allgood=1

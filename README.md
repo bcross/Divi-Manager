@@ -1,11 +1,9 @@
 # Divi Manager
 ## Install
-    wget -q https://github.com/bcross/Divi-Manager/archive/master.zip
-    unzip master.zip
-    rm master.zip Divi-Manager-master/LICENSE Divi-Manager-master/README.md
-    sudo cp -rf Divi-Manager-master/* /usr/local/bin
-    sudo chmod +x /usr/local/bin/divi-mgr
-    rm Divi-Manager-master -r
+    wget -q https://raw.githubusercontent.com/bcross/Divi-Manager/master/INSTALLME.sh
+    chmod +x INSTALLME.sh
+    sudo ./INSTALLME.sh
+    rm INSTALLME.sh
 ## Warnings
 Running `divi-mgr install` removes .divi in the caller's home directory. This could be hazardous to your wallet. Make sure you want to do this.
 Running `divi-mgr repair` or `divi-mgr update` *will* restart the divid service. Running `divi-mgr validate` might restart the divid service if necessary.

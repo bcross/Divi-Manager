@@ -10,8 +10,9 @@ function divi-mgr-install {
         return 1
     fi
     while true; do
-        read -p "WARNING!!! This could be destructive to an existing divi wallet. Continue? [y/N] " encrypt
-        case $encrypt in
+        read -p "WARNING!!! This could be destructive to an existing divi wallet. Continue? [y/N] " cont
+        echo
+        case $cont in
             [Yy]* ) break;;
             * ) exit;;
         esac
@@ -89,13 +90,11 @@ EOT"
         return 0
     fi
     echo "Waiting for divid to be ready..."
-    ready=0
-    while [ $ready -eq 0 ]; do
+    while true; do
         #Get info and wait for no error
         info=$(divi-cli getinfo 2>/dev/null)
         if [ -z "$info" ]; then
             sleep 5
-            continue
         else
             break
         fi
@@ -103,11 +102,14 @@ EOT"
     divi-cli setstakesplitthreshold 20000 >/dev/null 2>&1
     while true; do
         read -p "Would you like to encrypt your wallet? [Y/n] " encrypt
+        echo
         case $encrypt in
             [Nn]* ) break;;
             * ) 
                 read -sp 'Wallet password: ' walletpass
+                echo
                 read -sp 'Verify wallet password: ' walletpass2
+                echo
                 if [ "$walletpass" == "$walletpass2" ]; then
                     divi-cli encryptwallet "$walletpass" >/dev/null
                     unset walletpass

@@ -8,4 +8,3 @@ rm master.zip Divi-Manager-master/INSTALLME Divi-Manager-master/LICENSE Divi-Man
 sudo cp -rf Divi-Manager-master/* /usr/local/bin
 sudo chmod +x /usr/local/bin/divi-mgr
 rm Divi-Manager-master -r
-rm ${BASH_SOURCE[0]}

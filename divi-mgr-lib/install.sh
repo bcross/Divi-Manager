@@ -78,8 +78,8 @@ ExecStopPost=/bin/bash -c \"while [ -f /home/divid/.divi/divid.pid ]; do sleep 1
 [Install]
 WantedBy=multi-user.target
 EOT"
-    sudo systemctl daemon-reload >/dev/null
-    sudo systemctl enable divid.service >/dev/null
+    sudo systemctl --quiet daemon-reload
+    sudo systemctl --quiet enable divid.service
     #If run without arguments, start divid service
     if [ $# -eq 0 ] || [ "$1" != "0" ]; then
         sudo systemctl start divid.service

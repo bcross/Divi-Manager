@@ -1,6 +1,8 @@
 #!/bin/bash
 
 function divi-mgr-verify {
+    echo "Coming soon..."
+    return 1
     echo "Waiting for divid to be ready..."
     ready=0
     while [ $ready -eq 0 ]; do
@@ -23,4 +25,4 @@ function divi-mgr-verify {
 }
 
 #If script is being run independently, run function
-[[ "${BASH_SOURCE[0]}" == "${0}" ]] && divi-mgr-install
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && divi-mgr-verify

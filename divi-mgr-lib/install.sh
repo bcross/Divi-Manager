@@ -37,6 +37,7 @@ function divi-mgr-install {
 cat <<EOT > ~/.divi/divi.conf
 rpcuser=$RPC_USER
 rpcpassword=$RPC_PASS
+rpcallowip=127.0.0.1
 daemon=1
 EOT
     #Clean existing folders
